@@ -1,0 +1,25 @@
+case_id,event_id,email,source,monthly_visits,website_fit
+01,e01,lead01@example.com,facebook,0,pass
+02,e02,lead02@example.com,app_install,499,pass
+03,e03,lead03@example.com,website,500,pass
+04,e04,lead04@example.com,facebook,1999,pass
+05,e05,lead05@example.com,app_install,2000,pass
+06,e06,lead06@example.com,website,4999,pass
+07,e07,lead07@example.com,facebook,5000,pass
+08,e08,lead08@example.com,app_install,50000,pass
+09,e09,lead09@example.com,website,9000,fail
+10,e10,lead10@example.com,website,,pass
+11,e11,lead11@example.com,facebook,800,unknown
+12,e12,lead12@example.com,app_install,-1,pass
+13,e13,lead13@example.com,website,NaN,pass
+14,e14,,facebook,9000,pass
+15,e15,invalid,website,9000,pass
+16,e16,lead16@example.com,unknown,9000,pass
+17,e03,changed@example.com,website,5000,pass
+18,e18, LEAD03@EXAMPLE.COM ,facebook,5000,pass
+19,,lead19@example.com,website,5000,pass
+20,e20,lead20@example.com,app_install,1.5,pass
+21,e21,lead21@example.com,website,,fail
+22,e22,lead22@example.com,facebook,42,pass
+23,e23,lead23@example.com,app_install,1200,pass
+24,e24,lead24@example.com,website,3000,pass
