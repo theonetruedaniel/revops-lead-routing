@@ -55,3 +55,7 @@ The exact historical traffic-boundary handling is unconfirmed. These interval de
 Deduplication is in-memory and batch-local. The first valid contact identity reserves its position, including a contact sent to review; subsequent records do not re-enroll it. A production system would need persistent idempotency, update handling, access control and real provider verification.
 
 Related: [interactive workflow reconstruction](https://theonetruedaniel.github.io/lead-lab/) · [case study](https://gamma.app/docs/q5fun7ugwjj0g9n). The hosted reconstruction is a separate demo with its own illustrative rules.
+
+## License
+
+Original software and accompanying documentation in this repository are licensed under the [MIT License](LICENSE), copyright (c) 2026 Daniel Abrams. Third-party dependencies and any third-party content retain their respective licenses and rights.
