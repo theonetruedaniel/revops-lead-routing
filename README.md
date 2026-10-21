@@ -1,5 +1,7 @@
 # RevOps lead routing: an inspectable work sample
 
+[![Routing sample checks](https://github.com/theonetruedaniel/revops-lead-routing/actions/workflows/verify.yml/badge.svg)](https://github.com/theonetruedaniel/revops-lead-routing/actions/workflows/verify.yml)
+
 **24 fictional intake rows → documented decisions → checked results.**
 
 This small Python project demonstrates how I translate lead qualification requirements into routing rules, handle incomplete data and verify the output. It reconstructs a narrow part of workflows I worked on at AdScale, using synthetic data and illustrative policies.
@@ -24,7 +26,9 @@ python verify_sample.py
 python -m unittest -v
 ```
 
-Run these commands from the repository directory. The first two regenerate the CSV and Markdown results. Verification exits with a nonzero status if the output differs from the expected decisions, sequences or owners.
+Run these commands from the repository directory. The first two regenerate the CSV and Markdown results. Verification exits with a nonzero status if the output differs from the expected decisions, sequences or owners, or if the acceptance sample is empty. Failure details are written to `results/verification.md`, including row-count differences and missing output fields.
+
+GitHub Actions runs the routing and verifier tests on Python 3.10 and 3.13, regenerates the 24-row sample, and checks that the committed results are reproducible. The checks use synthetic local files and require no external services.
 
 ## Example decisions
 

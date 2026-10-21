@@ -10,6 +10,8 @@ with (root / "results/actual.csv").open(newline="", encoding="utf-8") as source:
     actual = list(csv.DictReader(source))
 
 failures = []
+if not expected:
+    failures.append("No expected cases: verification requires a non-empty acceptance sample.")
 if len(expected) != len(actual):
     failures.append(f"Row count differs: expected {len(expected)}, actual {len(actual)}")
 for want, got in zip(expected, actual):
@@ -23,7 +25,10 @@ lines = ["# Sample verification", "", "Synthetic data only; this measures agreem
          "|---|---|---|---|"]
 for want, got in zip(expected, actual):
     match = all(got.get(key) == value for key, value in want.items())
-    lines.append(f"| {want['case_id']} | {want['decision']} / {want['sequence']} | {got['decision']} / {got['sequence']} | {'PASS' if match else 'FAIL'} |")
+    lines.append(f"| {want['case_id']} | {want['decision']} / {want['sequence']} | {got.get('decision', '(missing)')} / {got.get('sequence', '(missing)')} | {'PASS' if match else 'FAIL'} |")
+if failures:
+    lines.extend(["", "## Failures", ""])
+    lines.extend(f"- {failure}" for failure in failures)
 lines.extend(["", "Owner assignment is also checked against expected.csv. No CRM writes, messages or enrichment calls occur.", ""])
 (root / "results/verification.md").write_text("\n".join(lines), encoding="utf-8")
 print("\n".join(failures) if failures else f"PASS: {len(expected)}/{len(expected)} rows match expected decisions, sequences and owners.")
