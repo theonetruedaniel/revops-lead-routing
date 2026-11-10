@@ -1,4 +1,6 @@
-# RevOps lead routing: an inspectable work sample
+# Inbound Lead Qualification & Routing
+
+**Sales Operations · An inspectable work sample**
 
 [![Routing sample checks](https://github.com/theonetruedaniel/revops-lead-routing/actions/workflows/verify.yml/badge.svg)](https://github.com/theonetruedaniel/revops-lead-routing/actions/workflows/verify.yml)
 
